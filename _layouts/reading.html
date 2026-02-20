@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body a="{{ site.theme_config.appearance | default: "auto" }}" class="reading-layout">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <div class="reading-header">
+          {%- include back_link.html -%}
+          <button id="theme-toggle" aria-label="Toggle dark mode">&#x25D0;</button>
+        </div>
+
+        <article>
+          <p class="post-meta">
+            <time datetime="{{ page.date }}">{{ page.date | date: site.theme_config.date_format }}</time>
+            {%- if page.location %} &mdash; {{ page.location }}{%- endif %}
+          </p>
+          <h1>{{ page.title }}</h1>
+          {%- if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{%- endif %}
+          {{ content }}
+        </article>
+      </div>
+    </main>
+
+    {%-if site.goat_counter and jekyll.environment == "production"-%}
+      {%-include goat_counter.html-%}
+    {%-endif-%}
+
+    <script src="{{ "/assets/js/theme_toggle.js" | relative_url }}"></script>
+
+    {% if page.custom_js %}
+      {% for js_file in page.custom_js %}
+        <script src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>

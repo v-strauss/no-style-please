@@ -1,0 +1,119 @@
+// Serif reading body
+body.reading-layout {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+// Monospace headings for editorial contrast
+body.reading-layout h1,
+body.reading-layout h2,
+body.reading-layout h3,
+body.reading-layout h4 {
+  font-family: monospace;
+}
+
+// Slightly wider reading column
+body.reading-layout .w {
+  max-width: 720px;
+}
+
+// Header row with back link + toggle
+.reading-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+// Dark mode toggle button
+#theme-toggle {
+  background: none;
+  border: 1px solid currentColor;
+  font-family: monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.15rem 0.5rem;
+  color: inherit;
+  line-height: 1;
+}
+
+// Post subtitle
+.post-subtitle {
+  font-style: italic;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+}
+
+// --- FLOATING "POKE-OUT" IMAGES ---
+
+// Base float styles (shared)
+body.reading-layout img.float-left,
+body.reading-layout img.float-right {
+  display: block;
+  width: 50%;
+  max-width: 50%;
+  margin-bottom: 1rem;
+}
+
+body.reading-layout img.float-left {
+  float: left;
+  margin-right: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+body.reading-layout img.float-right {
+  float: right;
+  margin-left: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+// Desktop: poke out beyond the column edges
+@media (min-width: 1100px) {
+  body.reading-layout img.float-left  { margin-left: -7rem; }
+  body.reading-layout img.float-right { margin-right: -7rem; }
+}
+
+// Tablet: float but no negative margin
+@media (max-width: 1099px) {
+  body.reading-layout img.float-left  { margin-left: 0; }
+  body.reading-layout img.float-right { margin-right: 0; }
+}
+
+// Mobile: stack full-width
+@media (max-width: 680px) {
+  body.reading-layout img.float-left,
+  body.reading-layout img.float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+// Float clear utility
+body.reading-layout .clear {
+  clear: both;
+  display: block;
+  height: 0;
+}
+
+// Article clearfix
+body.reading-layout article::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+// --- PASTEL CODE VARIANTS ---
+// Applied to div.highlighter-rouge via Kramdown IAL: {: .code-warm}
+
+div.highlighter-rouge.code-warm code {
+  background: #3d1f10;
+  color: #e8956d;
+}
+
+div.highlighter-rouge.code-muted code {
+  background: #1a1a2e;
+  color: #a8b4c8;
+}

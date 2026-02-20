@@ -1,38 +1,37 @@
-# For documentation on this file, see:
-# https://github.com/riggraz/no-style-please#customize-the-menu
-
 entries:
-  - title: info
+  - title: about
+    url: /about
+
+  - title: travel
     entries:
-      - title: a (nearly) no-CSS, fast, minimalist Jekyll theme.
-      - title: github repo
-        url: https://github.com/riggraz/no-style-please
-      - title: "used by <a href='https://riggraz.dev'>riggraz.dev</a> and <a href='https://github.com/riggraz/no-style-please/network/dependents'>many others</a>"
+      - title: recent dispatches
+        post_list:
+          category: travel
+          limit: 5
+          show_more: true
+          show_more_text: all travel reports...
+          show_more_url: /travel-archive
 
-  - title: all posts
-    post_list:
-      limit: 5
-      show_more: true
-      show_more_text: See archive...
-      show_more_url: archive.html
+  - title: academia
+    entries:
+      - title: recent papers
+        post_list:
+          category: academia
+          limit: 5
+          show_more: true
+          show_more_text: all academic writing...
+          show_more_url: /academia-archive
 
-  - title: posts by category
+  - title: blog
     post_list:
-      category: example2
+      category: blog
+      limit: 8
       show_more: true
-      show_more_text: See more posts...
-      show_more_url: example2-archive.html
+      show_more_text: more posts...
+      show_more_url: /blog-archive
+
+  - title: cv
+    url: /cv
 
   - title: rss
-    url: feed.xml
-  
-  - title: another list
-    entries:
-      - title: with subitems
-        entries:
-          - title: with subsubitems
-          - title: example page
-            url: about
-  - title: PRO TIP
-    entries:
-      - title: to edit this menu, edit _data/menu.yml file
+    url: /feed.xml
