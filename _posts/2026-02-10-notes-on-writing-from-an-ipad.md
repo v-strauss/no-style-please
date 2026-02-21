@@ -21,7 +21,7 @@ The setup: iPad Pro 11-inch, Magic Keyboard, iA Writer for drafting, Working Cop
 
 Long sessions with complex document structure. When I need to reorganise a fifteen-section piece with footnotes and cross-references, the iPad's single-window mental model starts to strain. The laptop remains better for that.
 
-Terminal access, for obvious reasons. `bundle exec jekyll serve` requires either a laptop or a remote server. I run a small VPS that serves a live preview; I can check the preview in Safari, but I cannot debug build errors from the iPad without a reasonable amount of friction.
+Terminal access, for obvious reasons. `bundle exec jekyll serve`{: .hl-warm} requires either a laptop or a remote server. I run a small VPS that serves a live preview; I can check the preview in Safari, but I cannot debug build errors from the iPad without a reasonable amount of friction.
 
 ## The unexpected benefit
 

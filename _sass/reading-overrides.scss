@@ -18,12 +18,12 @@ body.reading-layout .w {
   max-width: 720px;
 }
 
-// Back link header row
+// Back link
 .reading-header {
   margin-bottom: 1.5rem;
 }
 
-// Dark mode toggle button — fixed top-right on all pages
+// Dark mode toggle — fixed top-right corner, all pages
 #theme-toggle {
   position: fixed;
   top: 1.5rem;
@@ -46,46 +46,64 @@ body.reading-layout .w {
   margin-bottom: 2rem;
 }
 
-// --- ALIGNED IMAGES (block, no text wrap) ---
+// --- TILTED IMAGES ---
+// No text wraps alongside. Images lean left or right.
 
 body.reading-layout img.float-left,
 body.reading-layout img.float-right {
   display: block;
   float: none;
-  width: 75%;
-  max-width: 75%;
-  margin-top: 2rem;
-  margin-bottom: 0.4rem;
+  width: 62%;
+  max-width: 62%;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 body.reading-layout img.float-left {
   margin-left: 0;
   margin-right: auto;
+  transform: rotate(-2.5deg);
+  transform-origin: left center;
 }
 
 body.reading-layout img.float-right {
   margin-left: auto;
   margin-right: 0;
+  transform: rotate(2.5deg);
+  transform-origin: right center;
 }
 
-// Desktop: poke the outer edge into the margin
+// Desktop: extend into the margin
 @media (min-width: 1100px) {
-  body.reading-layout img.float-left  { margin-left: -5rem; }
-  body.reading-layout img.float-right { margin-right: -5rem; }
+  body.reading-layout img.float-left  { margin-left: -4rem; }
+  body.reading-layout img.float-right { margin-right: -4rem; }
 }
 
-// Mobile: full width
+// Mobile: full width, no tilt
 @media (max-width: 680px) {
   body.reading-layout img.float-left,
   body.reading-layout img.float-right {
     width: 100%;
     max-width: 100%;
     margin: 1.5rem 0;
+    transform: none;
+  }
+}
+
+// Ensure images are never inverted in dark mode
+// (adds higher-specificity counter-invert on top of no-style-please.scss)
+body.reading-layout[a="dark"] img {
+  filter: invert(1);
+}
+@media (prefers-color-scheme: dark) {
+  body.reading-layout[a="auto"] img {
+    filter: invert(1);
   }
 }
 
 // --- IMAGE CAPTIONS ---
-// Usage: *Caption text*{: .caption-left} or {: .caption-right}
+// Usage (Kramdown IAL after a paragraph):
+//   *Caption text*{: .caption-left}  or  *Caption text*{: .caption-right}
 
 body.reading-layout p.caption-left,
 body.reading-layout p.caption-right {
@@ -93,47 +111,75 @@ body.reading-layout p.caption-right {
   font-style: italic;
   font-size: 0.82rem;
   line-height: 1.4;
-  margin-top: 0;
+  margin-top: 0.2rem;
   margin-bottom: 2.5rem;
   opacity: 0.6;
-  width: 75%;
+  width: 62%;
 }
 
 body.reading-layout p.caption-left {
   text-align: left;
   margin-left: 0;
   margin-right: auto;
+  transform: rotate(-2.5deg);
+  transform-origin: left top;
 }
 
 body.reading-layout p.caption-right {
   text-align: right;
   margin-left: auto;
   margin-right: 0;
+  transform: rotate(2.5deg);
+  transform-origin: right top;
 }
 
 @media (min-width: 1100px) {
-  body.reading-layout p.caption-left  { margin-left: -5rem; width: calc(75% + 5rem); }
-  body.reading-layout p.caption-right { margin-right: -5rem; width: calc(75% + 5rem); }
+  body.reading-layout p.caption-left  { margin-left: -4rem; width: calc(62% + 4rem); }
+  body.reading-layout p.caption-right { margin-right: -4rem; width: calc(62% + 4rem); }
 }
 
 @media (max-width: 680px) {
   body.reading-layout p.caption-left,
   body.reading-layout p.caption-right {
     width: 100%;
-    text-align: left;
     margin-left: 0;
+    text-align: left;
+    transform: none;
   }
 }
 
-// --- CODE VARIANTS ---
+// --- INLINE CODE HIGHLIGHT COLORS ---
+// Usage: `text`{: .hl-pink}  (Kramdown IAL after inline code)
+// Colors invert in dark mode (body invert(1) + child invert(1) = original — same as base code style)
 
-// Warm: same feel as the default (dark bg, light text) but with a warm cast
+code.hl-pink {
+  background: #fce4f0;
+  color: #7a0050;
+}
+
+code.hl-warm {
+  background: #fdebd0;
+  color: #7a3000;
+}
+
+code.hl-blue {
+  background: #dce8f5;
+  color: #003b7a;
+}
+
+code.hl-green {
+  background: #d8f0e0;
+  color: #005020;
+}
+
+// --- CODE BLOCK VARIANTS ---
+// Applied to div.highlighter-rouge via Kramdown IAL: {: .code-warm}
+
 div.highlighter-rouge.code-warm code {
   background: #1c0a00;
   color: #ffd0a8;
 }
 
-// Muted: cool blue-grey
 div.highlighter-rouge.code-muted code {
   background: #1a1a2e;
   color: #a8b4c8;
