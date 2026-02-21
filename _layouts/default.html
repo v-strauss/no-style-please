@@ -12,6 +12,9 @@
       {%-include goat_counter.html-%}
     {%-endif-%}
 
+    <button id="theme-toggle" aria-label="Toggle dark mode">&#x25D0;</button>
+    <script src="{{ "/assets/js/theme_toggle.js" | relative_url }}"></script>
+
     {% if page.custom_js %}
       {% for js_file in page.custom_js %}
         <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
