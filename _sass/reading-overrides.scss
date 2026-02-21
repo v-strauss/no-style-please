@@ -46,64 +46,64 @@ body.reading-layout .w {
   margin-bottom: 2rem;
 }
 
-// --- TILTED IMAGES ---
-// No text wraps alongside. Images lean left or right.
+// --- IMAGE STYLES ---
 
-body.reading-layout img.float-left,
-body.reading-layout img.float-right {
+// --- .img-center: centered within column, ~80% wide, clean ---
+body.reading-layout img.img-center {
+  display: block;
+  width: 80%;
+  max-width: 80%;
+  margin: 2.5rem auto 0.4rem;
+}
+
+body.reading-layout p.caption-center {
+  font-family: monospace;
+  font-style: italic;
+  font-size: 0.82rem;
+  text-align: center;
+  width: 80%;
+  margin: 0.2rem auto 2.5rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 680px) {
+  body.reading-layout img.img-center { width: 100%; max-width: 100%; }
+  body.reading-layout p.caption-center { width: 100%; }
+}
+
+// --- .img-left / .img-right: block-level, 70% wide, breakout on desktop ---
+body.reading-layout img.img-left,
+body.reading-layout img.img-right {
   display: block;
   float: none;
-  width: 62%;
-  max-width: 62%;
+  width: 70%;
+  max-width: 70%;
   margin-top: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
-body.reading-layout img.float-left {
+body.reading-layout img.img-left {
   margin-left: 0;
   margin-right: auto;
-  transform: rotate(-2.5deg);
-  transform-origin: left center;
 }
 
-body.reading-layout img.float-right {
+body.reading-layout img.img-right {
   margin-left: auto;
   margin-right: 0;
-  transform: rotate(2.5deg);
-  transform-origin: right center;
 }
 
-// Desktop: extend into the margin
 @media (min-width: 1100px) {
-  body.reading-layout img.float-left  { margin-left: -4rem; }
-  body.reading-layout img.float-right { margin-right: -4rem; }
+  body.reading-layout img.img-left  { margin-left: -5rem; }
+  body.reading-layout img.img-right { margin-right: -5rem; }
 }
 
-// Mobile: full width, no tilt
 @media (max-width: 680px) {
-  body.reading-layout img.float-left,
-  body.reading-layout img.float-right {
-    width: 100%;
-    max-width: 100%;
+  body.reading-layout img.img-left,
+  body.reading-layout img.img-right {
+    width: 100%; max-width: 100%;
     margin: 1.5rem 0;
-    transform: none;
   }
 }
-
-// Ensure images are never inverted in dark mode
-// (adds higher-specificity counter-invert on top of no-style-please.scss)
-body.reading-layout[a="dark"] img {
-  filter: invert(1);
-}
-@media (prefers-color-scheme: dark) {
-  body.reading-layout[a="auto"] img {
-    filter: invert(1);
-  }
-}
-
-// --- IMAGE CAPTIONS ---
-// Usage (Kramdown IAL after a paragraph):
-//   *Caption text*{: .caption-left}  or  *Caption text*{: .caption-right}
 
 body.reading-layout p.caption-left,
 body.reading-layout p.caption-right {
@@ -114,37 +114,58 @@ body.reading-layout p.caption-right {
   margin-top: 0.2rem;
   margin-bottom: 2.5rem;
   opacity: 0.6;
-  width: 62%;
+  width: 70%;
 }
 
 body.reading-layout p.caption-left {
   text-align: left;
-  margin-left: 0;
-  margin-right: auto;
-  transform: rotate(-2.5deg);
-  transform-origin: left top;
+  margin-left: 0; margin-right: auto;
 }
 
 body.reading-layout p.caption-right {
   text-align: right;
-  margin-left: auto;
-  margin-right: 0;
-  transform: rotate(2.5deg);
-  transform-origin: right top;
+  margin-left: auto; margin-right: 0;
 }
 
 @media (min-width: 1100px) {
-  body.reading-layout p.caption-left  { margin-left: -4rem; width: calc(62% + 4rem); }
-  body.reading-layout p.caption-right { margin-right: -4rem; width: calc(62% + 4rem); }
+  body.reading-layout p.caption-left  { margin-left: -5rem; width: calc(70% + 5rem); }
+  body.reading-layout p.caption-right { margin-right: -5rem; width: calc(70% + 5rem); }
 }
 
 @media (max-width: 680px) {
   body.reading-layout p.caption-left,
   body.reading-layout p.caption-right {
-    width: 100%;
-    margin-left: 0;
-    text-align: left;
-    transform: none;
+    width: 100%; margin-left: 0; text-align: left;
+  }
+}
+
+// --- .img-hero: full viewport width, escapes the .w container ---
+body.reading-layout img.img-hero {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 3rem;
+  margin-bottom: 0.4rem;
+}
+
+body.reading-layout p.caption-hero {
+  font-family: monospace;
+  font-style: italic;
+  font-size: 0.82rem;
+  text-align: center;
+  margin: 0.2rem auto 3rem;
+  opacity: 0.6;
+}
+
+// Ensure images are never inverted in dark mode
+// (adds higher-specificity counter-invert on top of no-style-please.scss)
+body.reading-layout[a="dark"] img {
+  filter: invert(1);
+}
+@media (prefers-color-scheme: dark) {
+  body.reading-layout[a="auto"] img {
+    filter: invert(1);
   }
 }
 

@@ -15,7 +15,7 @@ The bathhouses open early. I arrived at Chreli-Abano just after seven, paid twel
 
 After the baths I climbed to Narikala. The fortress is a ruin — earthquake, neglect, time — but the walls still stand well enough to frame the view. The Mtkvari river below looks grey-green in November light. On the far bank the new city stretches away in glass and concrete; on this bank, Abanotubani's domed bathhouses cluster like mushrooms between the alleys.
 
-![Narikala fortress walls against the morning sky](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Narikala_fortress_old_Tbilisi.jpg/1280px-Narikala_fortress_old_Tbilisi.jpg){: .float-right}
+![Narikala fortress walls against the morning sky](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Narikala_fortress_old_Tbilisi.jpg/1280px-Narikala_fortress_old_Tbilisi.jpg){: .img-right}
 
 *Narikala fortress, overlooking the old town and the Mtkvari river.*{: .caption-right}
 
@@ -45,9 +45,13 @@ Grape varieties to look for:
 
 Sunday mornings at the Dry Bridge bring out the city's attic. Vendors spread Soviet medals, painted icons, battered samovars, mismatched cutlery, and hand-knitted socks across folding tables and blankets. I spent two hours walking the rows.
 
-![Vendors at the Dry Bridge flea market](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Dry_Bridge_market_Tbilisi.jpg/1280px-Dry_Bridge_market_Tbilisi.jpg){: .float-left}
+![Vendors at the Dry Bridge flea market](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Dry_Bridge_market_Tbilisi.jpg/1280px-Dry_Bridge_market_Tbilisi.jpg){: .img-left}
 
 *Sunday morning at the Dry Bridge. Everything the city no longer needs.*{: .caption-left}
+
+![The Mtkvari river and Tbilisi skyline from Narikala](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tbilisi_from_Narikala_Fortress.jpg/1280px-Tbilisi_from_Narikala_Fortress.jpg){: .img-hero}
+
+*Tbilisi from the walls of Narikala. The old town and the new city, held together by the river.*{: .caption-hero}
 
 I bought a small oil painting — a mountain scene, unframed, unsigned — for twenty lari. The vendor wrapped it in newspaper without comment. A few stalls down, an elderly man was selling pre-war German postcards. He spoke no English; I spoke no Georgian. We looked at them together anyway.
 

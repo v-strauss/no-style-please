@@ -44,45 +44,60 @@ No configuration needed. The button appears automatically on any `reading` layou
 
 ---
 
-## Floating "poke-out" photos
+## Image placement styles
 
-Images in `reading` layout posts can float left or right alongside the text. On wide desktop screens they extend beyond the column edge into the margin.
+Images in `reading` layout posts support three distinct placement styles, each with an optional caption. All are writable from an iPad using Kramdown IAL — no raw HTML required.
 
-### Float right
+### Style 1: Centered (`.img-center`)
 
-```markdown
-![Caption text](../assets/images/photo.jpg){: .float-right}
-
-Paragraph text flows to the left of the image...
-```
-
-### Float left
+Centered within the column at 80% width. Clean, no tilt.
 
 ```markdown
-![Caption text](../assets/images/photo.jpg){: .float-left}
-
-Paragraph text flows to the right of the image...
+![Alt text](photo.jpg){: .img-center}
+*Caption text*{: .caption-center}
 ```
 
-### Stop a float
+### Style 2: Breakout left / right (`.img-left` / `.img-right`)
 
-Place this before any element that should start below the floated image:
+Block-level, 70% wide, no text wrapping alongside. On wide desktop screens the image extends 5rem beyond the column edge into the margin.
 
 ```markdown
-{: .clear}
-
-Next paragraph starts here with no float active.
+![Alt text](photo.jpg){: .img-right}
+*Caption text*{: .caption-right}
 ```
 
-A `##` heading after a float also clears it naturally.
+```markdown
+![Alt text](photo.jpg){: .img-left}
+*Caption text*{: .caption-left}
+```
+
+### Style 3: Hero / full-bleed (`.img-hero`)
+
+The image escapes the `.w` container entirely and spans the full viewport width.
+
+```markdown
+![Alt text](photo.jpg){: .img-hero}
+*Caption text*{: .caption-hero}
+```
 
 ### Responsive behaviour
 
-| Viewport | Behaviour |
-|---|---|
-| > 1100px (wide desktop) | Float + image extends 7rem beyond column edge |
-| 681–1099px (tablet / narrow desktop) | Float within column, no negative margin |
-| ≤ 680px (mobile) | No float, image stacks full-width |
+| Viewport | `.img-center` | `.img-left` / `.img-right` | `.img-hero` |
+|---|---|---|---|
+| > 1100px (wide desktop) | 80% wide, centered | 70% wide + 5rem breakout into margin | Full viewport width |
+| 681–1099px (tablet) | 80% wide, centered | 70% wide, flush to edge, no breakout | Full viewport width |
+| ≤ 680px (mobile) | Full width | Full width, stacked | Full width |
+
+### Caption classes
+
+Each image class has a matching caption class:
+
+| Image class | Caption class | Alignment |
+|---|---|---|
+| `.img-center` | `.caption-center` | Centered |
+| `.img-left` | `.caption-left` | Left-aligned |
+| `.img-right` | `.caption-right` | Right-aligned |
+| `.img-hero` | `.caption-hero` | Centered |
 
 ---
 
@@ -221,7 +236,7 @@ Four sample posts are included in `_posts/`:
 
 | File | Layout | Category | Features exercised |
 |---|---|---|---|
-| `2026-01-15-tbilisi-in-november.md` | reading | travel | subtitle, location, float-right, float-left, clear, code-warm, blockquote, section divider |
+| `2026-01-15-tbilisi-in-november.md` | reading | travel | subtitle, location, img-right, img-left, img-hero, code-warm, blockquote, section divider |
 | `2025-11-03-slow-journalism-and-digital-tools.md` | reading | academia | subtitle, code-muted, section divider |
 | `2026-02-10-notes-on-writing-from-an-ipad.md` | post | blog | standard post layout |
 | `2025-09-22-on-the-word-dispatch.md` | post | blog | standard post layout |
