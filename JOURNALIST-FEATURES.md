@@ -129,6 +129,28 @@ Standard code blocks with no IAL are unchanged.
 
 ---
 
+## Inline code highlights
+
+Inline `code` spans can be given a pastel background colour with a Kramdown IAL placed immediately after the backtick span.
+
+| Class | Colour |
+|---|---|
+| `.hl-pink` | Pink — `#fce4f0` / `#7a0050` |
+| `.hl-warm` | Orange — `#fdebd0` / `#7a3000` |
+| `.hl-blue` | Blue — `#dce8f5` / `#003b7a` |
+| `.hl-green` | Green — `#d8f0e0` / `#005020` |
+
+```markdown
+`keyword`{: .hl-pink}
+`warning`{: .hl-warm}
+`reference`{: .hl-blue}
+`source`{: .hl-green}
+```
+
+The colours invert correctly in dark mode (same double-invert behaviour as code blocks).
+
+---
+
 ## Menu structure
 
 `_data/menu.yml` is organised around the journalist's four content types:
