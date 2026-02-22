@@ -1,0 +1,72 @@
+// Filter buttons — monospace, no border, opacity-based active state
+.links-filters {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.link-filter {
+  font-family: monospace;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.4;
+  &:hover { opacity: 0.7; }
+  &.active { opacity: 1; text-decoration: underline; }
+}
+
+// List
+.links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-item {
+  display: grid;
+  grid-template-columns: 0.7rem 1fr auto;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid;
+  &.hidden { display: none; }
+}
+
+// Category dots
+.link-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  top: -0.1em;
+}
+
+// Colors chosen to remain readable after filter:invert(1) in dark mode
+.link-dot--article { background: #0057ff; }  // inverts to orange
+.link-dot--book    { background: #cc8800; }  // inverts to blue-purple
+.link-dot--video   { background: #cc0000; }  // inverts to cyan
+.link-dot--other   { background: #007700; }  // inverts to magenta
+
+// Date — right column, muted
+.link-date {
+  font-family: monospace;
+  font-size: 0.82rem;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .link-item {
+    grid-template-columns: 0.7rem 1fr;
+  }
+  .link-date {
+    grid-column: 2;
+    font-size: 0.75rem;
+  }
+}
