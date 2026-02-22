@@ -158,16 +158,6 @@ body.reading-layout p.caption-hero {
   opacity: 0.6;
 }
 
-// Ensure images are never inverted in dark mode
-// (adds higher-specificity counter-invert on top of no-style-please.scss)
-body.reading-layout[a="dark"] img {
-  filter: invert(1);
-}
-@media (prefers-color-scheme: dark) {
-  body.reading-layout[a="auto"] img {
-    filter: invert(1);
-  }
-}
 
 // --- INLINE CODE HIGHLIGHT COLORS ---
 // Usage: `text`{: .hl-pink}  (Kramdown IAL after inline code)
