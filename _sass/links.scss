@@ -33,7 +33,26 @@
   gap: 0.7rem;
   padding: 0.4rem 0;
   border-bottom: 1px solid;
+  transition: opacity 0.18s ease;
   &.hidden { display: none; }
+}
+
+// Dim all other items when one is hovered
+.links-list:has(.link-item:hover) .link-item:not(:hover) {
+  opacity: 0.25;
+}
+
+// "New" badge
+.link-new {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  border: 1px solid;
+  padding: 0.05em 0.35em;
+  border-radius: 2px;
+  opacity: 0.6;
+  vertical-align: middle;
+  margin-left: 0.4rem;
 }
 
 // Category dots
