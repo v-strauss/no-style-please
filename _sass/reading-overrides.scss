@@ -159,6 +159,18 @@ body.reading-layout p.caption-hero {
 }
 
 
+// Images must not be inverted in dark mode.
+// body[a="dark"] img { filter: invert(1) } from the base theme has specificity [0,1,2],
+// which is lower than the image layout rules here (e.g. body.reading-layout img.img-center
+// is [0,2,2]). Adding a reading-layout-scoped rule restores the correct cascade.
+body.reading-layout[a="dark"] img:not(.ioda) { filter: invert(1); }
+body.reading-layout[a="dark"] img.ioda        { filter: invert(0); }
+
+@media (prefers-color-scheme: dark) {
+  body.reading-layout[a="auto"] img:not(.ioda) { filter: invert(1); }
+  body.reading-layout[a="auto"] img.ioda        { filter: invert(0); }
+}
+
 // --- INLINE CODE HIGHLIGHT COLORS ---
 // Usage: `text`{: .hl-pink}  (Kramdown IAL after inline code)
 // Colors invert in dark mode (body invert(1) + child invert(1) = original — same as base code style)
